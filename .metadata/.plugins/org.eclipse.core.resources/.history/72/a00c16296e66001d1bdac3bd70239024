@@ -1,0 +1,7 @@
+package entidade;
+
+public class testeproduto {
+	public String a;
+	public int b;
+	public double c;
+}

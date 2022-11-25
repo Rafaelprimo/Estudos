@@ -1,0 +1,49 @@
+package principal;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidades.aluno;
+
+public class execucao {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Quantos alunos serão digitados?");
+		int n = sc.nextInt();
+		double media = 0;
+		int contadorDeAprovados = 0;
+		int a = 0;
+		System.out.println();
+		aluno[] estudante = new aluno[n];
+		
+		for (int i = 0; i<n; i++) {
+			System.out.println("Digite nome, primeira e segunda nota do " + (i+1) + "aluno");
+			String nome = sc.nextLine();
+			double nota1 = sc.nextDouble();
+			double nota2 = sc.nextDouble();
+			estudante[i] = new aluno(nome, nota1, nota2);
+			media = (nota1 + nota2) /2;
+			if (media >=6) {
+				contadorDeAprovados += 1;
+			}
+		}
+		String[] nomeDosAprovados = new String[contadorDeAprovados];
+		
+		for (int i = 0; i<n; i++) {
+			if (estudante[i].getMediaFinal() >= 6) {
+				nomeDosAprovados[a] = estudante[i].getNome();
+				a += 1;
+			}
+		}
+		
+		System.out.println("Alunos aprovados:");
+		
+		for (int i = 0; i<a; i++) {
+			System.out.println(nomeDosAprovados[i]);
+		}
+		sc.close();
+	}
+}

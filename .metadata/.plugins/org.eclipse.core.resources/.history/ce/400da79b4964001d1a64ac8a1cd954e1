@@ -1,0 +1,22 @@
+package teste1;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Locale.setDefault (Locale.US); //importa a forma de pontuação americana.
+		Scanner sc = new Scanner (System.in); //importa a biblioteca de comandos para que a IDE possa ler dados.
+		int x,y,z;
+		System.out.println("Digite os 3 números");
+		x = sc.nextInt();
+		y = sc.nextInt();
+		z = sc.nextInt();
+		int maior = max(a,b,c);
+		
+		System.out.println("O maior dos números digitados é: " + maior);
+		
+		sc.close();
+	}
+}

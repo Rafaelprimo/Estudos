@@ -1,0 +1,35 @@
+package teste1;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Locale.setDefault (Locale.US); //importa a forma de pontuação americana.
+		Scanner sc = new Scanner (System.in); //importa a biblioteca de comandos para que a IDE possa ler dados.
+		double x1,x2,x3,y1,y2,y3;
+		
+		System.out.println("digite o valoir dos lados dos 2 triângulos");
+		x1 = sc.nextInt();
+		x2 = sc.nextInt();
+		x3 = sc.nextInt();
+		y1 = sc.nextInt();
+		y2 = sc.nextInt();
+		y3 = sc.nextInt();
+		
+		double area1 = Math.sqrt(((x1+x2+x3)/2)*((((x1+x2+x3)/2)-x1)) * ((((x1+x2+x3)/2)-x2)) * ((((x1+x2+x3)/2)-x3)));
+		double area2 = Math.sqrt(((y1+y2+y3)/2)*((((y1+y2+y3)/2)-y1)) * ((((y1+y2+y3)/2)-y2)) * ((((y1+y2+y3)/2)-y3)));
+		
+		if (area1 > area2) {
+			System.out.println("O primeiro triângulo tem área maior e é de " + area1);
+		}
+		else if (area1 == area2) {
+			System.set.println("Os dois triângulos tem a mesma área e é de" + area1);
+		}
+		else {
+			System.out.println("O segundo triângulo tem área maior e é de " + area2);
+		}
+		sc.close();
+	}
+}

@@ -1,0 +1,12 @@
+package testeprincipal;
+
+import entidade.testeproduto;
+
+public class principal {
+
+	public static void main(String[] args) {
+		testeproduto x = new testeproduto();
+		System.out.println(x.toString());
+	}
+
+}

@@ -1,0 +1,43 @@
+package entidades;
+
+public class conta {
+	private String numeroDaConta;
+	private String nomeDoTitular;
+	private double valor;
+	
+	public conta (String numeroDaConta, String nomeDoTitular) {
+		this.numeroDaConta = numeroDaConta;
+		this.nomeDoTitular = nomeDoTitular;
+	}
+	public conta (String numeroDaConta, String nomeDoTitular, double valor) {
+		this.numeroDaConta = numeroDaConta;
+		this.nomeDoTitular = nomeDoTitular;
+		this.valor = valor;
+	}
+	public String getNumeroDaConta() {
+		return numeroDaConta;
+	}
+	public String getNomeDoTitular() {
+		return nomeDoTitular;
+	}
+	public void setNomeDoTitular(String nomeDoTitular) {
+		this.nomeDoTitular = nomeDoTitular;
+	}
+	public double getValor() {
+		return valor;
+	}
+	public void deposito(double deposito) {
+		this.valor += deposito;
+	}
+	public void saque(double saque) {
+		this.valor -= saque + 5;
+	}
+	public String toString() {
+		return numeroDaConta
+				+ ", "
+				+ nomeDoTitular
+				+ ", "
+				+ String.format("%.2f", valor)
+				+".";
+	}
+}

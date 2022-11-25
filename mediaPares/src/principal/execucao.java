@@ -1,0 +1,40 @@
+package principal;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class execucao {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Quantos elementos vai ter o vetor?");
+		int n = sc.nextInt();
+		int soma = 0;
+		int contador = 0;
+		int mediaPares = 0;
+		
+		int[] vect = new int[n];
+		
+		for (int i = 0; i<n; i++) {
+			System.out.print("Digite um número:");
+			System.out.println();
+			vect[i] = sc.nextInt();
+			if ((vect[i] % 2) == 0) {
+				soma += vect[i];
+				contador += 1;
+			}
+		}
+		
+		if (contador > 0) {
+			mediaPares = soma / contador;
+			System.out.println("Media dos pares = " + mediaPares);
+		}
+		else {
+			System.out.println("Nenhum número par");
+		}
+		
+		sc.close();
+	}
+
+}

@@ -1,0 +1,11 @@
+package entidade;
+
+public class testeproduto {
+	public String a;
+	public int b;
+	public double c;
+	
+	public String toString() {
+		return a +" " + b + " " + c;
+	}
+}

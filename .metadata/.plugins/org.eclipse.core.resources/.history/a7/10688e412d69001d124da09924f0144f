@@ -1,0 +1,33 @@
+package principal;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class execucao {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.us);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Quantos números você vai digitar?");
+		int n = sc.nextInt();
+		double maiorNumero = 0;
+		int posicao = 0;
+		
+		double[] vect = new double[n];
+		
+		for (int i = 0; i<n; i++) {
+			System.out.print("Digite um número:");
+			vect[i] = sc.nextDouble();
+			
+			if (vect[i] > maiorNumero) {
+				maiorNumero = vect[i];
+				posicao = i;
+			}
+		}
+		System.out.println("Maior valor = " + maiorNumero);
+		System.out.println("Posição do Maior valor = " + posicao);
+
+		sc.close();
+	}
+}

@@ -1,0 +1,10 @@
+package bizusDataHora;
+
+public class comandosDataHora {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

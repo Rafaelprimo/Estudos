@@ -1,0 +1,45 @@
+package bizusDataHora;
+
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
+public class calculoComDataHora {
+
+	public static void main(String[] args) {
+		
+		LocalDate d04 = LocalDate.parse("2022-07-20");
+		
+		LocalDateTime d05 = LocalDateTime.parse("2022-07-20T01:30:26");
+		
+		Instant d06 = Instant.parse("2022-07-20T01:30:26Z");
+		
+		LocalDate pastWeekLocalDate = d04.minusDays(7);
+		/* eu não posso alterar DataHora, logo, eu instancio -7 dias
+		 * de d04 na variável declarada*/
+		
+		LocalDate nextWeekLocalDate = d04.plusDays(7);
+		
+		LocalDateTime nextWeekLocalDateTime = d05.minusHours(3);
+		
+		Instant pastWeekInstant = d06.minus(7, ChronoUnit.DAYS);
+		/* retirou 7 dias de d06*/
+		 
+		System.out.println("pastWeekLocalDate = " + pastWeekLocalDate);
+		System.out.println("nextWeekLocalDateTime = " + nextWeekLocalDateTime);
+
+		System.out.println("pastWeekInstant = " + pastWeekInstant);
+
+		// Vou fazer a duração agora
+		
+		Duration t1 = Duration.between(pastWeekLocalDate, d04);
+		
+		System.out.println(t1);
+		
+		
+		
+	}
+
+}

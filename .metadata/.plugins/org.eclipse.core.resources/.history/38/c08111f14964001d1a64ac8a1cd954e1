@@ -1,0 +1,39 @@
+package teste1;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Locale.setDefault (Locale.US); //importa a forma de pontuação americana.
+		Scanner sc = new Scanner (System.in); //importa a biblioteca de comandos para que a IDE possa ler dados.
+		int x,y,z;
+		System.out.println("Digite os 3 números");
+		x = sc.nextInt();
+		y = sc.nextInt();
+		z = sc.nextInt();
+		int maior = max(x,y,z);
+		
+		showResult(maior);
+		sc.close();
+	}
+	
+	public static int max (int x, int y, int z) {
+		int aux;
+		if (x>y && x>z) {
+			aux = x;
+		}
+		else if (y>z) {
+			aux = z
+		}
+		else {
+			aux = z;
+		}
+		return aux;
+	}
+	
+	public static void showResult (int value) {
+		System.out.println("maior: " + value);
+	}
+}
